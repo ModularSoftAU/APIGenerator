@@ -1,0 +1,35 @@
+---
+title: "POST player/inventory/add"
+description: Add an item to the player's inventory
+sidebar_label: Add item
+slug: add
+sidebar_position: 0
+---
+{/*
+Any valid mdx can go in this file. So note, that which rendering library you use
+may enable you to render all kinds of fancy things. These have been omitted so
+that this repository is platform agnostic.
+*/}
+
+POST `player/inventory/add`
+
+Add an item to the player's inventory
+
+:::info Note
+
+This is a privileged endpoint. Only authorised queries will be processed.
+
+:::
+
+## Parameters
+
+`player` *string*  
+The UUID of the player.
+
+`item` *integer*  
+The ID of the item to add to the player's invetory.
+
+
+## Examples
+
+

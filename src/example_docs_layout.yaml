@@ -1,0 +1,119 @@
+---
+player:
+  sidebar: Player
+  files:
+  - inventory.mdx:
+      sidebar: Inventory
+      files:
+      - add.mdx:
+          route: player/inventory/add
+          method: POST
+          privileged: true
+          short: Add item
+          description: Add an item to the player's inventory
+          parameters:
+            player:
+              type: string
+              info: The UUID of the player.
+              optional: false
+            item:
+              type: integer
+              info: The ID of the item to add to the player's invetory.
+              optional: false
+      - remove.mdx:
+          route: player/inventory/remove
+          method: POST
+          privileged: true
+          short: Remove item
+          description: Remove an item from the player's inventory
+          parameters:
+            player:
+              type: string
+              info: The UUID of the player.
+              optional: false
+            item:
+              type: integer
+              info: The ID of the item to remove to the player's inventory.
+              optional: false
+  - health.mdx:
+      route: player/health/$player
+      method: GET
+      privileged: false
+      short: Read health
+      description: Gets the player's health.
+      parameters:
+        player:
+          type: string
+          info: The UUID of the player.
+          optional: false
+  - edit_health.mdx:
+      route: player/edit_health
+      method: POST
+      privileged: true
+      short: Modify health
+      description: Adds the specified amount to the player's health. Can be negative."
+      parameters:
+        player:
+          type: string
+          info: The UUID of the player.
+          optional: false
+        amount:
+          type: integer
+          info: Health to add (can be negative)
+          optional: false
+game:
+  sidebar: Game
+  files:
+  - management:
+      sidebar: Management
+      files:
+      - start.mdx:
+          route: game/management/start
+          method: POST
+          privileged: true
+          short: Start a new game
+          description: Starts a new game
+          parameters:
+            name:
+              type: string
+              info: Game name
+              optional: false
+            max_players:
+              type: integer
+              info: Number of players that can join the game.
+              optional: false
+            can_fly:
+              type: boolean
+              info: If players can fly in this game. Default False.
+              optional: true
+      - end.mdx:
+          route: game/management/end
+          method: POST
+          privileged: true
+          short: End a game
+          description: Ends an ongoing game.
+          parameters:
+            game:
+              type: string
+              info: UUID of the game.
+              optional: false
+  - stats:
+      sidebar: Statistics
+      files:
+      - overall.mdx:
+          route: game/stats/overall
+          method: GET
+          privileged: true
+          short: Get Overall Stats
+          description: Gets a summarised view of the statistics of the games
+      - win_loss.mdx:
+          route: game/stats/win_loss/$player
+          method: GET
+          privileged: true
+          short: Win/Loss
+          description: Returns player's Win/Loss statistics.
+          parameters:
+            player:
+              type: string
+              info: The UUID of the player. If none supplier, return all players.
+              optional: true

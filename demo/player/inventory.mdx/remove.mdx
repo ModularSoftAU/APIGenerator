@@ -1,0 +1,35 @@
+---
+title: "POST player/inventory/remove"
+description: Remove an item from the player's inventory
+sidebar_label: Remove item
+slug: remove
+sidebar_position: 1
+---
+{/*
+Any valid mdx can go in this file. So note, that which rendering library you use
+may enable you to render all kinds of fancy things. These have been omitted so
+that this repository is platform agnostic.
+*/}
+
+POST `player/inventory/remove`
+
+Remove an item from the player's inventory
+
+:::info Note
+
+This is a privileged endpoint. Only authorised queries will be processed.
+
+:::
+
+## Parameters
+
+`player` *string*  
+The UUID of the player.
+
+`item` *integer*  
+The ID of the item to remove to the player's inventory.
+
+
+## Examples
+
+

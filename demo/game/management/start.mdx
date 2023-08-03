@@ -1,0 +1,41 @@
+---
+title: "POST game/management/start"
+description: Starts a new game
+sidebar_label: Start a new game
+slug: start
+sidebar_position: 0
+---
+{/*
+Any valid mdx can go in this file. So note, that which rendering library you use
+may enable you to render all kinds of fancy things. These have been omitted so
+that this repository is platform agnostic.
+*/}
+
+POST `game/management/start`
+
+Starts a new game
+
+:::info Note
+
+This is a privileged endpoint. Only authorised queries will be processed.
+
+:::
+
+## Parameters
+
+`name` *string*  
+Game name
+
+`max_players` *integer*  
+Number of players that can join the game.
+
+`can_fly` **optional** *boolean*  
+If players can fly in this game. Default False.
+
+
+## Examples
+
+### Hello 
+
+This will end up on the start.mdx page
+

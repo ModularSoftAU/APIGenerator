@@ -1,0 +1,6 @@
+---
+api_docs: example_docs_layout.yaml
+api_template_directory: ../templates
+api_template_file: ../templates/base_page_template.mdx
+api_build_to: ../demo
+api_section_label: My Game Endpoints
